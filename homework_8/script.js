@@ -121,6 +121,32 @@ window.addEventListener('DOMContentLoaded',()=>{
 }
     showUser.apply(age,['Андрей',"Миронов"]);
 
+    class options{
+        constructor(height,width,bg,fontSize,textAlign) {
+            this.height = height;
+            this.width = width;
+            this.bg = bg;
+            this.fontSize = fontSize;
+            this.textAlign = textAlign;
+        }
+        createDiv(){
+            let div = document.createElement('div');
+            console.log(this.textAlign);
+            div.style.cssText = `width: ${this.width}px;
+                                height: ${this.height}px;
+                                fontSize: ${this.fontSize}px;
+                                text-align: ${this.textAlign};
+                                background-color: ${this.bg};
+             `;
+             div.textContent='Проверка стилей';
+
+             let social = document.getElementsByClassName('social')[0];
+             social.appendChild(div);
+
+        }
+    }
+    let opt1 = new options(100,500,'red',50,'right');
+    opt1.createDiv();
 });
 
 
